@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinh Nhật Bé Mây</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(to bottom, #1e3a8a, #60a5fa);
+        color: #ffffff;
+        font-family: "Arial", sans-serif;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      .section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-in-out;
+      }
+      .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #ff6b6b;
+        transform: rotate(45deg);
+        animation: float 5s infinite;
+      }
+      .heart::before,
+      .heart::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #ff6b6b;
+        border-radius: 50%;
+        position: absolute;
+      }
+      .heart::before {
+        top: -10px;
+        left: 0;
+      }
+      .heart::after {
+        top: 0;
+        left: -10px;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(45deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(45deg);
+          opacity: 0;
+        }
+      }
+      .photo-frame {
+        border: 5px solid #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .audio-player {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="audio-player">
+      <audio id="bgMusic" src="/blue.mp3" loop></audio>
+      <button
+        id="playPause"
+        class="bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg"
+      >
+        Phát nhạc
+      </button>
+    </div>
+
+    <div
+      class="min-h-screen flex flex-col items-center justify-center py-10 px-5"
+    >
+      <!-- Header -->
+      <div class="text-center section mb-10">
+        <h1 class="text-5xl font-bold mb-4 animate-pulse">
+          Chúc Mừng Sinh Nhật
+        </h1>
+        <p class="text-xl">
+          22 tuổi rực rỡ của bé Mây - Cô gái đáng yêu nhất quả đất!
+        </p>
+      </div>
+
+      <!-- About Bé Mây -->
+      <div class="section max-w-2xl mx-auto text-center mb-5">
+        <h2 class="text-4xl font-semibold mb-6">Về Bé Mây Siêu Cute</h2>
+        <p>
+          <strong>Hoạt động khi rảnh rỗi:</strong> Nằm lướt tiktok, chơi game,
+          nghe nhạc
+        </p>
+        <p>
+          <strong>Nhạc:</strong> Thích rất nhiều thể loại nhạc, nhạc cổ điển,
+          nhạc kpop, nhạc phim hoạt hình, nhạc US UK, nghe nhiều chắc là nhạc
+          lofi và nhóm nhạc yêu thích là EXO
+        </p>
+        <p>
+          <strong>Phim bé hay xem:</strong> Anime hoặc các bộ phim hoạt hình của
+          Disney, Pixar, DreamWork hay của Cartoon NetWork nữa
+        </p>
+        <p>
+          <strong>Địa điểm:</strong> Thích biển, thích ngắm hoàng hôn, bình minh
+          và bầu trời đầy sao
+        </p>
+        <p><strong>Màu sắc:</strong> Xanh dương</p>
+        <p>
+          <strong>Món ăn:</strong> Thích các món hải sản ở nhà, thích hột gà
+          nướng, thích ăn xiêng bẩn, thích ăn mì Siu Kay, thích ăn đồ chay,
+          thích phở bò, thích ăn đồ Hàn ở quán busan, thích ăn lẩu ở spicy box,
+          thích đồ nướng, thích ăn gà Texas, thích ăn canh chua, thích trà trái
+          cây, thích ăn bánh tráng mắm ruốt, thích pizza ở Emart, thích món bún
+          thái, cơm trộn hải sản, mì cay Seoul, lẩu gà lá é, mỳ ý và gà sốt của
+          Jolibee, trà sữa ở túc tắc tea, thích chả giò, thích bánh kebap, bánh
+          tacos, thích các món nấu ăn cùng Boi, thích tôm, thích món gà viên sốt
+          cay, thích dưa hấu, Thường thì ăn ngoài, cơ mà nấu ăn thì lại ngon
+          nhức nách và không thích sầu riêng
+        </p>
+      </div>
+
+      <!-- Wishes -->
+      <div class="section max-w-2xl mx-auto text-center my-10">
+        <h2 class="text-4xl font-semibold mb-6">Lời Chúc Dành Cho Bé Mây</h2>
+        <p class="mb-4 text-xl">
+          Bà bé của Boi thích làm nũng lắm lun, nhưng mà yên tâm, có Boi đây bé
+          cứ tự tin là chính mình nha, Boi vẫn sẽ luôn bên cạnh lắng nghe và xoa
+          đầu cho bé, ôm bé thật chặt, kể cho bé nghe đủ mọi thứ trên đời, dẫn
+          bé đi ăn đủ thứ món ngon lun nha, còn hong ngon thì ăn cho biết biết
+          cho chừa =))). Hiện tại mình còn trẻ, mới 22 tuổi đầu à, nên vẫn còn
+          phải bán mình cho tư bản nhiều quá, phải học tập thêm, cày kinh nghiệm
+          thêm. Nhưng Boi hứa, sau này khi đã ổn định rồi, Boi sẽ dẫn bé đi thật
+          nhiều nơi, ăn thật nhiều món ngon, quan tâm bé thật nhiều nè, nhất
+          định không để bé phải thiệt thòi đâu nha... Thời tiết Sài Gòn dạo này
+          thất thường ghê, thấy bé cứ bệnh quài, thương bé lắm lun, chúc bé luôn
+          khỏe mạnh, công việc tốt hơn, và tương lai rực rỡ như bầu trời đầy sao
+          nha! Love you, Bé Mây!
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="section text-center mb-10">
+        <p class="text-xl">Từ Boi, người sẽ mãi iu bé 💙</p>
+        <p class="mt-4 text-xl">22/06/2025 - Một ngày thật đặc biệt!</p>
+      </div>
+    </div>
+
+    <script>
+      // Scroll animation
+      const sections = document.querySelectorAll(".section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      sections.forEach((section) => observer.observe(section));
+
+      // Floating hearts
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+      }
+      setInterval(createHeart, 1000);
+
+      // Music control
+      const audio = document.getElementById("bgMusic");
+      const playPauseBtn = document.getElementById("playPause");
+      let isPlaying = false;
+      playPauseBtn.addEventListener("click", () => {
+        if (!isPlaying) {
+          audio.play();
+          playPauseBtn.textContent = "Tạm dừng";
+          isPlaying = true;
+        } else {
+          audio.pause();
+          playPauseBtn.textContent = "Phát nhạc";
+          isPlaying = false;
+        }
+      });
+    </script>
+  </body>
+</html>
